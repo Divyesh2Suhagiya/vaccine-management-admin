@@ -1,0 +1,25 @@
+.login{
+    background-color: var(--bg-main);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login_section{
+    background-color: white;
+    /* height: 100%; */
+}
+.login_section_left{
+    background-color: var(--theme-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.login_section_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
