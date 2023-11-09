@@ -14,8 +14,6 @@ function App() {
   useEffect(() => {
     if(localStorage.getItem('islogin') &&isOnline ){
       dispatch(getUserDetail())
-      dispatch(getChildDetail())
-      dispatch(getVaccineDetail())
     }
   }, [])
 

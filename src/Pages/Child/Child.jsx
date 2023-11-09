@@ -1,14 +1,22 @@
 import moment from 'moment';
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { HOC } from '../../Components/HOC/HOC'
 import { customStyles } from '../../Constant/Constant';
 import DataTable from 'react-data-table-component';
+import { getChildDetail } from '../../Redux/Actions/UserAction';
 
 function Child() {
     let state = useSelector(state => state.child.child)
     let users = useSelector(state => state.user.user)
-    console.log(state);
+    const dispatch = useDispatch()
+    const [isOnline, setIsOnline] = useState
+    (navigator.onLine);
+    useEffect(() => {
+      if(localStorage.getItem('islogin') &&isOnline ){
+        dispatch(getChildDetail())
+      }
+    }, [])
 
     const columns = [
         {

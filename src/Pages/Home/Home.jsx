@@ -57,13 +57,13 @@ function Home() {
     labels,
     datasets: [
       {
-        label: 'Cloth',
+        label: 'Dataset A',
         data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
         borderColor: '#d76489',
         backgroundColor: '#d76489',
       },
       {
-        label: 'Other',
+        label: 'Dataset B',
         data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
         borderColor: '#84b8ac',
         backgroundColor: '#84b8ac',
