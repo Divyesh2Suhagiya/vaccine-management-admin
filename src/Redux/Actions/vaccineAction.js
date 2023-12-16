@@ -3,7 +3,7 @@ import { GET_VACCINE } from "../Types/Type";
 
 export const getVaccineDetail = () => {
     return async (dispatch) => {
-        let response = await HTTP.get('vaccine/getAllVaccine?lang=gu');
+        let response = await HTTP.get('vaccine/getAllVaccine');
         dispatch({type : GET_VACCINE , data : response?.data?.data})
     }
 }

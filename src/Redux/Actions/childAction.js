@@ -3,7 +3,7 @@ import { GET_CHILD } from "../Types/Type";
 
 export const getChildDetail = () => {
     return async (dispatch) => {
-        let response = await HTTP.get('child/getAllChild?lang=hi');
+        let response = await HTTP.get('child/getAllChild');
         dispatch({type : GET_CHILD , data : response?.data?.data})
     }
 }
