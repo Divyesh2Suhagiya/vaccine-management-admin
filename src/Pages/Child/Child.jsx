@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HOC } from '../../Components/HOC/HOC'
 import { customStyles } from '../../Constant/Constant';
 import DataTable from 'react-data-table-component';
-import { getChildDetail } from '../../Redux/Actions/UserAction';
+import { deleteChildDetail, getChildDetail } from '../../Redux/Actions/childAction';
+import Swal from 'sweetalert2';
 
 function Child() {
     let state = useSelector(state => state.child.child)
@@ -21,11 +22,11 @@ function Child() {
     const columns = [
         {
             name: 'Name',
-            selector: row => row.name,
+            selector: row => row.enname,
         },
         {
             name: 'Mother Name',
-            selector: row => row.motherName,
+            selector: row => row.enmotherName,
         },
         {
             name: 'BirthDate',
@@ -33,17 +34,39 @@ function Child() {
         },
         {
             name: 'Gender',
-            selector: row => row.gender,
+            selector: row => row.engender,
         },
         {
             name: 'Place of birth',
-            selector: row => row.placeOfBirth,
+            selector: row => row.enplaceOfBirth,
         },
         {
             name: 'Username',
-            selector: row => users.find(x => x._id == row.userId)?.name ,
+            selector: row => users.find(x => x._id == row.userId)?.enname ,
+        },
+        {
+            name: 'Action',
+            selector: row => <>
+                <button className='btn btn-danger py-1' onClick={() => deleteChild(row._id)}>DELETE</button>
+            </>,
         }
     ];
+
+    const deleteChild = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to delete this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                dispatch(deleteChildDetail(id))
+            }
+        });
+    }
   return (
     <>
         <div className='d-flex justify-content-between mb-3'>

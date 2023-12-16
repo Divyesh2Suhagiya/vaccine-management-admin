@@ -12,11 +12,11 @@ function User() {
     const columns = [
         {
             name: 'Name',
-            selector: row => row.name,
+            selector: row => row.enname,
         },
         {
             name: 'Surname',
-            selector: row => row.surname,
+            selector: row => row.ensurname,
         },
         {
             name: 'Email',
@@ -33,19 +33,19 @@ function User() {
         },
         {
             name: 'City',
-            selector: row => row.city,
+            selector: row => row.encity,
         },
         {
             name: 'State',
-            selector: row => row.state,
+            selector: row => row.enstate,
         },
         {
             name: 'Country',
-            selector: row => row.country,
+            selector: row => row.encountry,
         },
         {
             name: 'Landmark',
-            selector: row => row.landmark,
+            selector: row => row.enlandmark,
         },
     ];
     return (

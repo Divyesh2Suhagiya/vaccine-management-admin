@@ -28,6 +28,11 @@ function Dashboard() {
       displayName : 'Vaccine',
       link : '/vaccine',
       icon: ''
+    },
+    {
+      displayName : 'Doctor',
+      link : '/doctor',
+      icon: ''
     }
   ]
   return (

@@ -6,7 +6,8 @@ import { customStyles } from '../../Constant/Constant';
 import DataTable from 'react-data-table-component';
 import { Col, Modal, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { addVaccineDetail, editVaccineDetail, getVaccineDetail } from '../../Redux/Actions/UserAction';
+import { addVaccineDetail, deleteVaccineDetail, editVaccineDetail, getVaccineDetail } from '../../Redux/Actions/vaccineAction';
+import Swal from 'sweetalert2';
 
 function Vaccine() {
     let state = useSelector(state => state.child.child)
@@ -39,27 +40,27 @@ function Vaccine() {
         },
         {
             name: 'ShortName',
-            selector: row => row.shortName,
+            selector: row => row.enshortName,
         },
         {
             name: 'Full Name',
-            selector: row => row.fullName,
+            selector: row => row.enfullName,
         },
         {
             name: 'Price',
-            selector: row => row.price,
+            selector: row => row.enprice,
         },
         {
             name: 'Symptomps',
-            selector: row => row.symptoms,
+            selector: row => row.ensymptoms,
         },
         {
             name: 'Dose Name',
-            selector: row => row.doseName,
+            selector: row => row.endoseName,
         },
         {
             name: 'Dose ML',
-            selector: row => row.doseML,
+            selector: row => row.endoseML,
         },
         {
             name: 'Duration',
@@ -67,15 +68,15 @@ function Vaccine() {
         },
         {
             name: 'route',
-            selector: row => row.route ,
+            selector: row => row.enroute ,
         },
         {
             name: 'site',
-            selector: row => row.site ,
+            selector: row => row.ensite ,
         },
         {
             name: 'Description',
-            selector: row => row.description ,
+            selector: row => row.endescription ,
             wrap : true,
             width : "200px"
         },
@@ -86,8 +87,10 @@ function Vaccine() {
         {
             name: 'Action',
             selector: row => <>
-                <button className='btn btn-warning py-1' onClick={() => editVaccine(row)}>EDIT</button>
+                <button className='btn btn-warning py-1 me-1' onClick={() => editVaccine(row)}>EDIT</button>
+                <button className='btn btn-danger py-1' onClick={() => deleteVaccine(row._id)}>DELETE</button>
             </>,
+            width:'200px'
         }
     ];
 
@@ -97,7 +100,7 @@ function Vaccine() {
     };
     const onSubmit = async (data) => {
         let Existvaccine = vaccine.find(x => x._id == data._id)
-        data.vaccineImage = data.vaccineImage[0] ? await toBase64(data.vaccineImage[0]) : ""
+        data.vaccineImage = typeof data.vaccineImage == 'string' ? "" :  await toBase64(data.vaccineImage[0])
         if(data.vaccineImage == ''){
             if(Existvaccine && Existvaccine.vaccineImage){
                 data.vaccineImage = Existvaccine.vaccineImage
@@ -120,18 +123,40 @@ function Vaccine() {
       }
 
       const editVaccine = (editObj) => {
+
         for(let key in editObj){
-            if(key != 'vaccineImage'){
-                setValue(key , editObj[key])
-            }
-            if(key == 'date'){
-                let date = new Date(editObj[key])
-                let editDate = date.getFullYear() + '-' + (date.getMonth()+1)+ '-' + date.getDate()
-                setValue(key , editDate)
-            }
+          if(key.startsWith('en')){
+            editObj[key.split('en')[1]] = editObj[key]
+          }
         }
+        for(let key in editObj){
+            setValue(key , editObj[key])
+            if(key == 'date'){
+                let Objdate = new Date(editObj[key])
+                let date = Objdate.getDate() < 10 ? ('0' + Objdate.getDate().toString()) :  Objdate.getDate()
+                let month = Objdate.getMonth()+1 < 10 ? '0' + Objdate.getMonth()+1 :  Objdate.getMonth()
+                let editDate = Objdate.getFullYear() + '-' + month + '-' + date
+                setValue('date' , editDate)
+              }
+            }
         setShow(true)
         setisAdd(false)
+      }
+
+      const deleteVaccine = (id) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to delete this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            dispatch(deleteVaccineDetail(id))
+          }
+        });
       }
   return (
     <>

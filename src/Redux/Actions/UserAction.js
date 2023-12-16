@@ -8,33 +8,3 @@ export const getUserDetail = () => {
         dispatch({type : GET_USER , data : response?.data?.data})
     }
 }
-
-export const getChildDetail = () => {
-    return async (dispatch) => {
-        let response = await HTTP.get('child/getAllChild?lang=en');
-        dispatch({type : GET_CHILD , data : response?.data?.data})
-    }
-}
-
-export const getVaccineDetail = () => {
-    return async (dispatch) => {
-        let response = await HTTP.get('vaccine/getAllVaccine?lang=en');
-        dispatch({type : GET_VACCINE , data : response?.data?.data})
-    }
-}
-
-
-export const addVaccineDetail = (data) => {
-    return async (dispatch) => {
-        let response = await HTTP.post('vaccine/addVaccine', data);
-        dispatch(getVaccineDetail())
-    }
-}
-
-
-export const editVaccineDetail = (data) => {
-    return async (dispatch) => {
-        let response = await HTTP.post('vaccine/updateVaccine', data);
-        dispatch(getVaccineDetail())
-    }
-}
