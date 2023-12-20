@@ -33,7 +33,7 @@ function Dashboard() {
       <div className="col-3 col-lg-2 sidebar d-flex flex-column justify-content-between d-none d-lg-flex">
         <div>
           <div className="d-flex justify-content-center mb-3">
-            <MdOutlineVaccines size={100} color="white" />
+            <img src="/logo.png" alt="" width={100} />
           </div>
           <hr />
           {Menu.map((x, i) => {

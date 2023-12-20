@@ -60,7 +60,7 @@ function User() {
             <div className='d-flex justify-content-between mb-3'>
                 <h3>USERS</h3>
             </div>
-            <div className="row">
+            <div className="row bg-white">
                 <DataTable columns={columns} customStyles={customStyles} data={state} pagination />
             </div>
         </>

@@ -134,7 +134,7 @@ function Doctor() {
             <h3>DOCTORS</h3>
             <button className='same_theme_button px-4' onClick={OpenDialog}>ADD</button>
         </div>
-        <div className="row">
+        <div className="row bg-white">
             <DataTable columns={columns} customStyles={customStyles} data={doctors} pagination />
         </div>
 

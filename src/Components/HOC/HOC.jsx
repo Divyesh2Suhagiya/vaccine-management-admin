@@ -1,17 +1,13 @@
-import {TfiShoppingCart} from 'react-icons/tfi'
-import {BsSearch} from 'react-icons/bs'
-import { useSelector } from 'react-redux'
+
 import Dashboard from '../../Pages/Dashboard/Dashboard'
 import { Link, NavLink } from 'react-router-dom'
-import { signOut } from '../../HTTP/HTTP'
-import Countdown from 'react-countdown'
 import { HiOutlineArrowLeftOnRectangle } from 'react-icons/hi2'
 import Swal from 'sweetalert2'
 import { HiOutlineMenu } from "react-icons/hi";
 import { Offcanvas } from 'react-bootstrap'
 import { useState } from 'react'
-import { MdOutlineVaccines } from 'react-icons/md'
 import { Menu } from '../../Constant/Constant'
+import { IoIosClose } from "react-icons/io";
 
 export const HOC = (Component) => {
     const NewComponent = () => {
@@ -64,14 +60,14 @@ export const HOC = (Component) => {
                     <Component />
                 </div>
 
-                <Offcanvas show={show} onHide={closeSidebar}>
-                  <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                  </Offcanvas.Header>
+               <div className=''>
+               <Offcanvas className="sideMenu" show={show} onHide={closeSidebar}>
+
                   <Offcanvas.Body>
+                  <IoIosClose color="white" size={30} className="float-end cursor_pointer" onClick={closeSidebar} />
                   <div>
                     <div className="d-flex justify-content-center mb-3">
-                      <MdOutlineVaccines size={100} color="#0fca9a" />
+                      <img src="/logo.png" alt="" width={100} />
                     </div>
                     <hr />
                     {Menu.map((x, i) => {
@@ -89,6 +85,8 @@ export const HOC = (Component) => {
                   </div>
                   </Offcanvas.Body>
                 </Offcanvas>
+               </div>
+
             </div>
         </div>
         </>

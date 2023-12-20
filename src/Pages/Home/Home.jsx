@@ -24,47 +24,47 @@ function Home() {
         <div className='d-flex justify-content-between mb-3'>
             <h3>DASHBOARD</h3>
         </div>
-        <div className="row g-3">
-            <div className="col-6">
+        <div className="row g-4">
+            <div className="col-12 col-sm-6">
               <Card className="border-0">
-                <Card.Body className="rounded-3 shadow dashboardCard" style={{backgroundColor : '#f2fff5'}}>
+                <Card.Body className="rounded-3 shadow dashboardCard" >
                   <h5>USERS</h5>
                   <div className="d-flex justify-content-between align-items-center">
                     <h3 className="mt-4">{users.length}</h3>
-                    <FaUsers color="white" size={40} />
+                    <FaUsers color="#17203f" size={40} />
                   </div>
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-sm-6">
               <Card className="border-0">
-                <Card.Body className="rounded-3 shadow dashboardCard" style={{backgroundColor : '#ffe6fb'}}>
+                <Card.Body className="rounded-3 shadow dashboardCard" >
                   <h5>VACCINES</h5>
                   <div className="d-flex justify-content-between align-items-center">
                     <h3 className="mt-4">{vaccines.length}</h3>
-                    <TbVaccineBottle color="white" size={40} />
+                    <TbVaccineBottle color="#17203f" size={40} />
                   </div>
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-sm-6">
               <Card className="border-0">
-                <Card.Body className="rounded-3 shadow dashboardCard" style={{backgroundColor : '#fffaf2'}}>
+                <Card.Body className="rounded-3 shadow dashboardCard" >
                   <h5>DOCTORS</h5>
                   <div className="d-flex justify-content-between align-items-center">
                     <h3 className="mt-4">{doctors.length}</h3>
-                    <FaHandHoldingMedical color="white" size={40} />
+                    <FaHandHoldingMedical color="#17203f" size={40} />
                   </div>
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-sm-6">
               <Card className="border-0">
-                <Card.Body className="rounded-3 shadow dashboardCard" style={{backgroundColor : '#ebfdff'}}>
+                <Card.Body className="rounded-3 shadow dashboardCard" >
                   <h5>CHILDS</h5>
                   <div className="d-flex justify-content-between align-items-center">
                     <h3 className="mt-4">{childs.length}</h3>
-                    <FaChild  color="white" size={40} />
+                    <FaChild  color="#17203f" size={40} />
                   </div>
                 </Card.Body>
               </Card>
