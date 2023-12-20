@@ -13,7 +13,6 @@ export const HOC = (Component) => {
 
 
           const logout = () => {
-            console.log('snfdl')
             Swal.fire({
               title: 'Are you sure?',
               text: "You won't be able to signout!",
@@ -34,7 +33,7 @@ export const HOC = (Component) => {
         <div className='row dashboard m-0'>
             <Dashboard />
             <div className='col-9 col-lg-10 display_section p-0'>
-                <div className="header">
+                {/* <div className="header">
                     <div className="d-none d-lg-flex">
                         <input type="text" placeholder='Search....' /><button className='searchButton'><BsSearch color="white" /></button>
                     </div>
@@ -46,7 +45,7 @@ export const HOC = (Component) => {
                                 <button onClick={logout} className="btn btn-danger"><HiOutlineArrowLeftOnRectangle size={20} /> Logout</button>
                             </div>
                     </div>
-                </div>
+                </div> */}
                 <div className='p-5'>
                     <Component />
                 </div>

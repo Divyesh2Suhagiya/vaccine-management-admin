@@ -7,7 +7,6 @@ import { customStyles } from '../../Constant/Constant';
 
 function User() {
     let state = useSelector(state => state.user.user)
-    console.log(state);
 
     const columns = [
         {
@@ -17,6 +16,14 @@ function User() {
         {
             name: 'Surname',
             selector: row => row.ensurname,
+        },
+        {
+            name: 'Gender',
+            selector: row => row.engender,
+        },
+        {
+            name: 'Relation',
+            selector: row => row.enrelation,
         },
         {
             name: 'Email',

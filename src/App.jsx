@@ -6,7 +6,10 @@ import Loader from './Components/Loader/Loader';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { IoWarning } from 'react-icons/io5';
-import { getChildDetail, getUserDetail, getVaccineDetail } from './Redux/Actions/UserAction';
+import { getUserDetail } from './Redux/Actions/UserAction';
+import { getDoctorDetail } from './Redux/Actions/DoctorAction';
+import { getChildDetail } from './Redux/Actions/childAction';
+import { getVaccineDetail } from './Redux/Actions/vaccineAction';
 
 function App() {
   const dispatch = useDispatch()
@@ -14,6 +17,9 @@ function App() {
   useEffect(() => {
     if(localStorage.getItem('islogin') &&isOnline ){
       dispatch(getUserDetail())
+      dispatch(getVaccineDetail())
+      dispatch(getChildDetail())
+      dispatch(getDoctorDetail())
     }
   }, [])
 
