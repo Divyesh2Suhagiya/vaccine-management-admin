@@ -304,12 +304,12 @@
 
 @media only screen and (max-width: 767px) {
   .dashboardCard {
-    height:130px;
+    height:150px;
   }
   .dashboardCard h5{
-    font-size: 18px;
+    font-size: 19px;
   }
   .dashboardCard h3{
-    font-size: 22px;
+    font-size: 23px;
   }
 }
