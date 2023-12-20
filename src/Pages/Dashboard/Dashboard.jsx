@@ -7,35 +7,10 @@ import { signOut } from "../../HTTP/HTTP";
 import { MdOutlineVaccines } from "react-icons/md";
 import { HiOutlineArrowLeftOnRectangle } from "react-icons/hi2";
 import Swal from "sweetalert2";
+import { Menu } from "../../Constant/Constant";
 
 function Dashboard() {
-  let Menu = [
-    {
-      displayName: "Dashboard",
-      link: "/",
-      icon: "",
-    },
-    {
-      displayName: "Users",
-      link: "/user",
-      icon: "",
-    },
-    {
-      displayName: "Childs",
-      link: "/child",
-      icon: "",
-    },
-    {
-      displayName: "Vaccine",
-      link: "/vaccine",
-      icon: "",
-    },
-    {
-      displayName: "Doctor",
-      link: "/doctor",
-      icon: "",
-    },
-  ];
+  
   const logout = () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -55,10 +30,10 @@ function Dashboard() {
   }
   return (
     <>
-      <div className="col-3 col-lg-2 sidebar d-flex flex-column justify-content-between">
+      <div className="col-3 col-lg-2 sidebar d-flex flex-column justify-content-between d-none d-lg-flex">
         <div>
           <div className="d-flex justify-content-center mb-3">
-            <MdOutlineVaccines size={100} color="#0fca9a" />
+            <MdOutlineVaccines size={100} color="white" />
           </div>
           <hr />
           {Menu.map((x, i) => {

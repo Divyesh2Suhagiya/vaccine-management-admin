@@ -10,3 +10,31 @@ export const customStyles = {
         },
     }
 };
+
+export let Menu = [
+    {
+      displayName: "Dashboard",
+      link: "/",
+      icon: "",
+    },
+    {
+      displayName: "Users",
+      link: "/user",
+      icon: "",
+    },
+    {
+      displayName: "Childs",
+      link: "/child",
+      icon: "",
+    },
+    {
+      displayName: "Vaccine",
+      link: "/vaccine",
+      icon: "",
+    },
+    {
+      displayName: "Doctor",
+      link: "/doctor",
+      icon: "",
+    },
+  ];

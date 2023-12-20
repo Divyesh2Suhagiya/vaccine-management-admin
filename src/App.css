@@ -2,7 +2,7 @@
   --bg-main : rgb(240, 240, 240);
   --bg-dark : #2b3b69;
   --loader : none;
-  --theme-color : #0fca9a;
+  --theme-color : #17203f;
   --orange: rgb(224, 64, 43);
 }
 .product_card{
@@ -99,6 +99,9 @@
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
+  background: radial-gradient(circle at 10% 20%, var(--theme-color) 0%, rgb(88, 146, 152) 90%);
+  color: white !important;
+  /* background: linear-gradient(79.8deg, rgb(101, 132, 154) 3.2%, rgb(160, 197, 201) 89.1%); */
 }
 .dashboardCard h5{
   font-size: 25px;
@@ -113,6 +116,8 @@
   /* background-color: rgb(245, 245, 245); */
   border-right: 1px solid lightgray;
   /* background-color: var(--bg-dark); */
+  /* background-color: #007aff; */
+  background-color: var(--theme-color);
   padding: 20px;
 }
 .header{
@@ -147,7 +152,8 @@
   height: 100%;
 }
 .sidebar a{
-  color: rgb(56, 56, 56);
+  /* color: rgb(56, 56, 56); */
+  color: white;
   display: block;
   text-decoration: none;
   padding: 10px;
@@ -157,12 +163,15 @@
   margin-top: 5px;
 }
 .sidebar a:hover{
-  background-color: rgba(194, 194, 194, 0.273);
-  color: var(--theme-color) !important;
+  /* background-color: rgba(194, 194, 194, 0.273); */
+  color: white;
+  background-color: rgba(215, 215, 215, 0.537);
 }
 .active{
-  background-color: rgba(194, 194, 194, 0.273);
-  color: var(--theme-color) !important;
+  /* background-color: rgba(194, 194, 194, 0.273); */
+  /* color: var(--theme-color) !important; */
+  color: white;
+  background-color: rgba(215, 215, 215, 0.537);
 }
 .chart_section{
   background-color: white;
