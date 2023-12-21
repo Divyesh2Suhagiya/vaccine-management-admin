@@ -35,6 +35,11 @@ function Doctor() {
 
     const columns = [
         {
+          name: 'No.',
+          selector: (row,i) => i,
+          width:'60px'
+        },
+        {
             name: 'Image',
             selector: row => <>
                 <img src={row.doctorImage} alt="" width={35} height={35} />

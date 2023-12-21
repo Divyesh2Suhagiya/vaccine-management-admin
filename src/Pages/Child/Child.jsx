@@ -21,6 +21,11 @@ function Child() {
 
     const columns = [
         {
+            name: 'No.',
+            selector: (row,i) => i,
+            width:'60px'
+        },
+        {
             name: 'Name',
             selector: row => row.enname,
         },

@@ -33,6 +33,11 @@ function Vaccine() {
 
     const columns = [
         {
+          name: 'No.',
+          selector: (row,i) => i,
+          width:'60px'
+        },
+        {
             name: 'Image',
             selector: row => <>
                 <img src={row.vaccineImage} alt="" width={35} height={35} />
