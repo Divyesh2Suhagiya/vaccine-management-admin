@@ -49,6 +49,7 @@ function Child() {
             selector: row => <>
                 <button className='btn btn-danger py-1' onClick={() => deleteChild(row._id)}>DELETE</button>
             </>,
+            width : '120px'
         }
     ];
 
