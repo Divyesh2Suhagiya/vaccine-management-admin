@@ -36,7 +36,7 @@ function Doctor() {
     const columns = [
         {
           name: 'No.',
-          selector: (row,i) => i,
+          selector: (row,i) => i+1,
           width:'60px'
         },
         {
