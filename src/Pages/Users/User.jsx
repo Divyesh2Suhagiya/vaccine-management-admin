@@ -7,16 +7,28 @@ import { customStyles } from '../../Constant/Constant';
 
 function User() {
     let state = useSelector(state => state.user.user)
-    console.log(state);
 
     const columns = [
         {
+            name: 'No.',
+            selector: (row,i) => i+1,
+            width:'60px'
+        },
+        {
             name: 'Name',
-            selector: row => row.name,
+            selector: row => row.enname,
         },
         {
             name: 'Surname',
-            selector: row => row.surname,
+            selector: row => row.ensurname,
+        },
+        {
+            name: 'Gender',
+            selector: row => row.engender,
+        },
+        {
+            name: 'Relation',
+            selector: row => row.enrelation,
         },
         {
             name: 'Email',
@@ -33,19 +45,19 @@ function User() {
         },
         {
             name: 'City',
-            selector: row => row.city,
+            selector: row => row.encity,
         },
         {
             name: 'State',
-            selector: row => row.state,
+            selector: row => row.enstate,
         },
         {
             name: 'Country',
-            selector: row => row.country,
+            selector: row => row.encountry,
         },
         {
             name: 'Landmark',
-            selector: row => row.landmark,
+            selector: row => row.enlandmark,
         },
     ];
     return (
@@ -53,7 +65,7 @@ function User() {
             <div className='d-flex justify-content-between mb-3'>
                 <h3>USERS</h3>
             </div>
-            <div className="row">
+            <div className="row bg-white">
                 <DataTable columns={columns} customStyles={customStyles} data={state} pagination />
             </div>
         </>
